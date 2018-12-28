@@ -19,8 +19,8 @@ class Cnode(unittest.TestCase):
     def test_login(self):
         driver = self.driver
         driver.find_element_by_css_selector("ul.nav>li:nth-child(6)>a").click()
-        driver.find_element_by_id("#name").send_keys("wreerueir")
-        driver.find_element_by_id("#pass").send_keys("12343443")
+        driver.find_element_by_id("name").send_keys("wreerueir")
+        driver.find_element_by_id("pass").send_keys("12343443")
         driver.find_element_by_css_selector('[class="span-primary"]').click()
         time.sleep(6)
     def tearDown(self):
