@@ -42,17 +42,23 @@ class Cnode(unittest.TestCase):
         driver.find_element_by_css_selector(".span9").send_keys("你好，xiaoxia！")
 
         menu = driver.find_element_by_css_selector('div.CodeMirror-scroll')
-        #hidden_submenu = driver.find_element_by_css_selector("div.CodeMirror-scroll")
 
         action = ActionChains(driver)
         action.move_to_element(menu)
+
         action.click(menu).send_keys("大家好！我是allen。很高兴\n认识你们")
         action.perform()
+        # ActionChains(driver).move_to_element(menu).click(menu).send_keys("大家好！我是allen。很高兴\n认识你们").perform()
+
+        # 模拟键盘组合快捷键ctrl+b
+        # action.click(menu).key_down(Keys.CONTROL).send_keys('b').key_up(Keys.CONTROL).send_keys('加粗显示').perform()
+
 
         driver.find_element_by_css_selector('input[type="submit"]').click()
         time.sleep(4)
 
     def tearDown(self):
+
         self.driver.save_screenshot('./posttopic.png')
 
 
